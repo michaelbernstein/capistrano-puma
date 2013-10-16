@@ -59,12 +59,6 @@ namespace :puma do
     end
   end
 
-  if Rake::Task['rvm:hook']
-    before :start, 'rvm:hook'
-    before :stop, 'rvm:hook'
-    before :restart, 'rvm:hook'
-  end
-
   def start_options
     if config_file
       "-q -d -e #{puma_env} -C #{config_file}"
