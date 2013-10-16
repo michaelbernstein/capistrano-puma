@@ -54,9 +54,9 @@ namespace :puma do
   end
 
   task :check_sockets_dir do
-    on roles fetch(:puma_role) do
-      execute :mkdir, '-pv', File.dirname(state_path)
-    end
+   # on roles fetch(:puma_role) do
+  #    execute :mkdir, '-pv', File.dirname(state_path)
+  #  end
   end
 
   def start_options
